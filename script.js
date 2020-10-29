@@ -1,6 +1,6 @@
 // 1) `splitAndMerge`
 
-const splitAndMerge = (str,sp) =>(str.split(" ").join("").split("").join(sp))
+const splitAndMerge = (str,sp) =>(str.split(" ").map((word) => word.split('').join(sp)).join(' '));
 
 console.log(splitAndMerge("My name is John", " "));
 console.log(splitAndMerge("Hello World!", ","));
@@ -85,7 +85,7 @@ console.log(newArray[4]());
 
 // 8) `sum`
 
-const sum = (...args) => ((args.length === 0) ? 0 : args[0] + sum(...args.slice(1)));
+const sum = (...args) => (args.reduce((total, amount) =>  total + amount, 0));
 
 console.log(sum(1, 3, 5, 7));
 
